@@ -5,7 +5,6 @@ import { getContacts } from '../../redux/selectors';
 import s from './ContactForm.module.css';
 import { toast } from 'react-toastify';
 
-
 export default function Form() {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
@@ -25,7 +24,9 @@ export default function Form() {
 
   const addContact = e => {
     e.preventDefault();
-    const TwinName = contacts.find(contact => contact.name.toLowerCase() === name.toLowerCase());
+    const TwinName = contacts.find(
+      contact => contact.name.toLowerCase() === name.toLowerCase()
+    );
     const TwinNumber = contacts.find(contact => contact.number === number);
 
     if (TwinName) {
@@ -39,7 +40,7 @@ export default function Form() {
       resetState();
       return;
     }
-    
+
     onSubmit(name, number);
     resetState();
   };

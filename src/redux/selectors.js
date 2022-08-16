@@ -8,7 +8,7 @@ export const getVisibleContacts = state => {
   const getFilteredContacts = contacts => {
     const normalizedFilter = filter.toLowerCase();
     return contacts.filter(text =>
-      text.name.toLowerCase().includes(normalizedFilter),
+      text.name.toLowerCase().includes(normalizedFilter)
     );
   };
 
